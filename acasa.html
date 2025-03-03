@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviciul de Ambulanță Județeană Xenon</title>
+    <style>.map-container {
+        position: relative;
+        display: inline-block;
+    }
+    .hotspot {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background-color: red;
+        border-radius: 50%;
+        cursor: pointer;
+        transform: translate(-50%, -50%);
+    }
+    .tooltip {
+        display: none;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.75);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background: #0073e6;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            background: #003366;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            position: relative;
+            background: url('images/spital5.png') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        .hero h2 {
+            font-size: 2.5em;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .carousel-container {
+            position: relative;
+            width: 800px;
+            overflow: hidden;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 40px auto;
+        }
+        .carousel-container img {
+        width: 800px; 
+        height: 450px;
+        object-fit: cover;
+    }
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            position: relative;
+        }
+        img {
+            width: 100%;
+            display: block;
+            border-radius: 0px;
+        }
+        .text-box {
+            padding: 15px;
+            text-align: center;
+            background: #fff;
+            border-top: 1px solid #ddd;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 40px 20px;
+            background: #ffffff;
+        }
+        .service {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin: 15px;
+            padding: 20px;
+            width: calc(33.333% - 40px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .service img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .service h3 {
+            color: #0073e6;
+            margin-bottom: 10px;
+        }
+        .service p {
+            font-size: 0.9em;
+        }
+        footer {
+            background: #003366;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const hotspots = document.querySelectorAll(".hotspot");
+        const tooltip = document.getElementById("tooltip");
+    
+        hotspots.forEach(hotspot => {
+            hotspot.addEventListener("mouseenter", function () {
+                tooltip.textContent = hotspot.getAttribute("data-info");
+                tooltip.style.display = "block";
+                tooltip.style.top = (hotspot.offsetTop + 20) + "px";
+                tooltip.style.left = (hotspot.offsetLeft + 20) + "px";
+            });
+    
+            hotspot.addEventListener("mouseleave", function () {
+                tooltip.style.display = "none";
+            });
+        });
+    });
+    </script>
+<body>
+    <header>
+        <h1>Serviciul de Ambulanță Județeană Xenon</h1> 
+    </header>
+    <nav>
+        <a href="acasa.html">Acasă</a>
+        <a href="conducere.html">Conducere</a>
+        <a href="aplicatii-saj.html">Aplicații SAJ</a>
+        <a href="anunturi.html">Anunțuri</a>
+        <a href="regulament.html">Regulament</a>
+        <a href="plan-interor.html">Plan Interior</a>
+        <a href="preturi.html">Prețuri</a>
+    </nav>
+    
+    <div class="hero">
+        <h2>Suntem aici pentru sănătatea ta!</h2>
+    </div>
+    <section id="about" style="padding: 50px 0; background-color: #f4f4f9;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto;">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 style="text-align: center; font-size: 36px; color: #333;">Bine ați venit la Serviciul de Ambulanță Județeană Xenon!</h2>
+                    <p style="text-align: center; font-size: 18px; color: #555; line-height: 1.8;">
+                        Suntem aici pentru a oferi <strong>siguranță, promptitudine și profesionalism</strong> în toate situațiile de urgență. Echipa noastră este dedicată misiunii de a salva vieți și de a asigura servicii de calitate pentru comunitatea pe care o deservim.
+                    </p>
+                    <h2 style="text-align: center; font-size: 36px; color: #333;">Misiunea noastră</h2>
+                    <p style="text-align: center; font-size: 18px; color: #555; line-height: 1.8;">
+                        La Serviciul de Ambulanță Județeană Xenon, credem în valoarea fiecărei vieți. Suntem determinați să răspundem rapid și eficient în momentele de nevoie, cu un personal bine pregătit și echipamente moderne.
+                        Indiferent de situație, ne angajăm să oferim un sprijin medical prompt și să punem pacienții pe primul loc.
+                    <h2 style="text-align: center; font-size: 36px; color: #333;">Ce oferim?</h2>
+                    <p style="text-align: center; font-size: 18px; color: #555; line-height: 1.8;">
+                        Intervenții de urgență 24/7: Răspuns rapid și asistență medicală de urgență în orice moment.
+                        <p style="text-align: center; font-size: 18px; color: #555; line-height: 1.8;">
+                            Transport medical specializat: Pentru pacienți care necesită îngrijire constantă în timpul deplasării.
+                            <p style="text-align: center; font-size: 18px; color: #555; line-height: 1.8;">
+                                Consiliere medicală: Informații și ghidaj în cazurile care nu reprezintă urgențe critice.
+                                <p style="text-align: center; font-size: 18px; color: #555; line-height: 1.8;">
+                                    Campanii de informare și educare: Promovarea sănătății și prevenirea accidentelor în comunitate.
+                    </p>
+                    <h2 style="text-align: center; font-size: 36px; color: #333;">Alăturați-vă echipei noastre!</h2>
+                    <p style="text-align: center; font-size: 18px; color: #555; line-height: 1.8;">
+                        Ești pasionat de salvarea vieților și dorești să faci parte dintr-o echipă unită? Serviciul Județean de Ambulanță Xenon recrutează! Vizitează secțiunea <a href="aplicatii-saj.html" class="cta-button">Aplică acum</a> pentru a afla cum poți deveni unul dintre noi.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="slide">
+                <img src="images/lobby.png" alt="Cameră modernă" width="800" height="450">
+                <div class="text-box">Spațiu destinat pacienților și vizitatorilor care așteaptă să fie consultați sau să primească informații.</div>
+            </div>
+            <div class="slide">
+                <img src="images/cabinet.png" alt="Sala de așteptare" width="800" height="450">
+                <div class="text-box">Zonă de relaxare pentru angajați.</div>
+            </div>
+            <div class="slide">
+                <img src="images/vestiar.png" alt="Birou de consultație" width="800" height="450">
+                <div class="text-box">Vestiar destinat personalului medical.</div>
+            </div>
+            <div class="slide">
+                <img src="images/Sectie2.png" alt="Sala de așteptare" width="800" height="450">
+                <div class="text-box">Sectia B.</div>
+            </div>
+            <div class="slide">
+                <img src="images/radiologie.png" alt="Birou de consultație" width="800" height="450">
+                <div class="text-box">Camera de radiologie.</div>
+            </div>
+            <div class="slide">
+                <img src="images/RMN.png" alt="Birou de consultație" width="800" height="450">
+                <div class="text-box">Camera de RMN.</div>
+            </div>
+            <div class="slide">
+                <img src="images/salaoperatie.png" alt="Birou de consultație" width="800" height="450">
+                <div class="text-box">Sală de operații.</div>
+            </div>
+            <div class="slide">
+                <img src="images/salon.png" alt="Birou de consultație" width="800" height="450">
+                <div class="text-box">Camera de gardă.</div>
+            </div>
+            <div class="slide">
+                <img src="images/sectie.png" alt="Birou de consultație" width="800" height="450">
+                <div class="text-box">Cabinet.</div>
+            </div>
+            <div class="slide">
+                <img src="images/salon3.png" alt="Birou de consultație" width="800" height="450">
+                <div class="text-box">Salon dublu pentru pacienți.</div>
+            </div>
+            <div class="slide">
+                <img src="images/salon4.png" alt="Birou de consultație" width="800" height="450">
+                <div class="text-box">Salon individual pentru pacient.</div>
+            </div>
+        </div>
+        <button class="arrow prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="arrow next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <script>
+        let index = 0;
+        function moveSlide(step) {
+            const slides = document.querySelectorAll(".slide");
+            index = (index + step + slides.length) % slides.length;
+            document.querySelector(".carousel").style.transform = `translateX(-${index * 100}%)`;
+        }
+    </script>
+    <footer>
+        <p>&copy; 2025 Serviciul de Ambulanță Județeană Xenon</p>
+    </footer> 
+</body>
+</html>

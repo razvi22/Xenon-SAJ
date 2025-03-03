@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviciul de Ambulanță Județeană Xenon - Anunțuri</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+        }
+        header {
+            background: #0073e6;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            background: #003366;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .announcement-section {
+            background-color: #ffffff;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        .announcement-header {
+            text-align: center;
+            color: #003366;
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .announcement-item {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .announcement-item:hover {
+            transform: translateY(-5px);
+            background-color: #f1faff;
+        }
+        .announcement-item h3 {
+            color: #0073e6;
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .announcement-item p {
+            color: #555;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .announcement-item span {
+            color: #ff5733;
+            font-weight: bold;
+        }
+        footer {
+            background: #003366;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .announcement-header {
+                font-size: 28px;
+            }
+            .announcement-item h3 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Serviciul de Ambulanță Județeană Xenon</h1>
+    </header>
+    <nav>
+        <a href="acasa.html">Acasă</a>
+        <a href="conducere.html">Conducere</a>
+        <a href="aplicatii-saj.html">Aplicații SAJ</a>
+        <a href="anunturi.html">Anunțuri</a>
+        <a href="regulament.html">Regulament</a>
+        <a href="plan-interor.html">Plan Interior</a>
+        <a href="preturi.html">Prețuri</a>
+    </nav>
+
+    <main>
+        <div class="announcement-section">
+            <div class="announcement-header">
+                <h2>Anunțuri Importante</h2>
+            </div>
+
+            <!-- Exemplu de anunț -->
+            <div class="announcement-item">
+                <div>
+                    <h3>Flotă modernizată pentru intervenții mai rapide!</h3>
+                    <p>Serviciul de Ambulanță Județeană Xenon <span>a achiziționat autospeciale noi</span>, dotate cu echipamente de ultimă generație. Acestea vor asigura intervenții mai rapide și eficiente, inclusiv în zonele greu accesibile!</p>
+                </div>
+            </div>
+
+            <div class="announcement-item">
+                <div>
+                    <h3>Modificări tarifare.</h3>
+                    <p>Tarifele pentru serviciile de ambulanță vor fi actualizate odată cu data de 19 februarie 2025. Consultați secțiunea <a href="preturi.html" style="color: #ff0000;">Prețuri</a> pentru toate detaliile.</p>
+                </div>
+            </div>
+
+            <div class="announcement-item">
+                <div>
+                    <h3>Angajăm personal medical!</h3>
+                    <p>Căutăm personal medical pentru a ne extinde echipele de intervenție rapidă. Dacă vrei să faci parte dintr-o echipă dedicată salvării de vieți, te așteptăm să aplici! <span>Aplicațiile sunt deschise!!</span></p>
+                </div>
+            </div>
+
+            <div class="announcement-item">
+                <div>
+                    <h3>Eveniment despre siguranța rutieră.</h3>
+                    <p>Vino la evenimentul nostru de informare despre prevenirea accidentelor rutiere! Te așteptăm la sediul nostru pe 12 februarie 2025. <span>Participarea este gratuită! </span></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Serviciul de Ambulanță Județeană Xenon</p>
+    </footer>
+</body>
+</html>
